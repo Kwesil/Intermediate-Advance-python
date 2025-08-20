@@ -14,24 +14,19 @@ class Item:
 
     def calculate_total_price(self):
         return self.price *  self
+    
+    def apply_discount(self):
+        """This method applies the discount to the price."""
+        self.price = self.price * self.pay_rate
 
 item1 = Item("Phone", 100, 5)
-"""item1.name = 'Phone'
-item1_price = 100
-item1_quantity = 5
-#item_price_total = item1_price * item1_quantity
-# print(item1.calculate_total_price(item1.price, item1.quantity))"""
+item1.apply_discount()  # Applying discount to item1
+print(item1.price)
 
 item2 = Item("Laptop", 100, 5)
 item2.has_numpad = False
-"""item2.name = "Laptop"
-item2.price = 1000
-item2.quantity = 3
-# print(item2.calculate_total_price(item2.price, item2.quantity))"""
+item2.pay_rate = 0.7  # Overriding the class variable for this instance
+item2.apply_discount()  # Applying discount to item2
+print(item2.price)  # Price after discount for item2
 
-print(Item.pay_rate)  # Accessing the class variable
-print(item1.pay_rate)  # Accessing the instance method
-print(item2.pay_rate)  # Accessing the instance method
-print(Item.__dict__)  # Accessing all the attribute of the class variable
-print(item1.__dict__)  # Accessing all the attribute of the item1 instance
-print(item2.__dict__)  # Accessing all the attribute of the item2 instance
+
