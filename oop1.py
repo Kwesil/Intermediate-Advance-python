@@ -28,5 +28,3 @@ item2.has_numpad = False
 item2.pay_rate = 0.7  # Overriding the class variable for this instance
 item2.apply_discount()  # Applying discount to item2
 print(item2.price)  # Price after discount for item2
-
-
