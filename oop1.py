@@ -1,4 +1,5 @@
 class Item:
+    pay_rate =  0.8 # The pay rate after 20% discount
     def __init__(self, name: str, price: float, quantity: int): # constructor
         """This is the constructor method that initializes the instance variables."""
 
@@ -28,3 +29,9 @@ item2.price = 1000
 item2.quantity = 3
 # print(item2.calculate_total_price(item2.price, item2.quantity))"""
 
+print(Item.pay_rate)  # Accessing the class variable
+print(item1.pay_rate)  # Accessing the instance method
+print(item2.pay_rate)  # Accessing the instance method
+print(Item.__dict__)  # Accessing all the attribute of the class variable
+print(item1.__dict__)  # Accessing all the attribute of the item1 instance
+print(item2.__dict__)  # Accessing all the attribute of the item2 instance
