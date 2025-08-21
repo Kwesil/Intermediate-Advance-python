@@ -1,5 +1,4 @@
 # Class and static methods
-# attributes
 class Item:
     pay_rate = 0.8  # The pay rate after 20% discount
     all = []  # This is a class variable that will hold all instances of Item
@@ -26,8 +25,21 @@ class Item:
         """This method applies the discount to the price."""
         self.price = self.price * self.pay_rate
 
-    def instantiate_from_csv(self):
+    @classmethod
+    def instantiate_from_csv(cls):
 
+        """This method reads from a CSV file and creates instances of Item."""
+        import csv
+        with open(r'C:\Users\Nwabike\Desktop\NewTech\OOP\item.csv', 'r') as file:
+            reader = csv.DictReader(file)
+            items = list(reader)
+
+            for item in items:
+                Item(
+                    name=item.get('name'),
+                    price=int(item.get('price')),
+                    quantity=(item.get('quantity'))
+                )
 
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
