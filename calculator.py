@@ -29,12 +29,18 @@ class calc:
         return x / y
     
     def logic(self, operator):
-        if operator == "addition":
+        if operator == "add" or "+":
             return add(x, y)
-
-        return{}
+        elif operator == "sub" or "-":
+            return sub(x, y)
+        elif operator == "mul" or "*":
+            return mul(x, y)
+        elif operator == "div" or "/":
+            return div(x, y)
+        else:
+            return "Invalid operator"
 
     
 x = float(input("Enter your first digit: "))
 y = float(input("Enter your second digit: "))
-operator = input("Enter your operator (addition subtraction, muliplication, division): ")
+operator = input("Enter your operator (add or +, sub or -, mul or *, div or /): ")
