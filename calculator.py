@@ -28,6 +28,7 @@ class calc:
         self.y = y
         return x / y
     
+    # How do we go about this
     def logic(self, operator):
         if operator == "add" or "+":
             return add(x, y)
@@ -44,3 +45,5 @@ class calc:
 x = float(input("Enter your first digit: "))
 y = float(input("Enter your second digit: "))
 operator = input("Enter your operator (add or +, sub or -, mul or *, div or /): ")
+result = calc()
+print(result)
