@@ -4,46 +4,42 @@
 # add a gui
 
 
-class calc:
+class Calc:
     def __init__(self):
-        return 0
-    
+        pass  # No need to return anything
+
     def add(self, x, y):
-        self.x = x
-        self.y = y
         return x + y
-    
+
     def sub(self, x, y):
-        self.x = x
-        self.y = y
         return x - y
-    
+
     def mul(self, x, y):
-        self.x = x
-        self.y = y
         return x * y
-    
+
     def div(self, x, y):
-        self.x = x
-        self.y = y
+        if y == 0:
+            return "Error: Division by zero"
         return x / y
-    
-    # How do we go about this
-    def logic(self, operator):
-        if operator == "add" or "+":
-            return add(x, y)
-        elif operator == "sub" or "-":
-            return sub(x, y)
-        elif operator == "mul" or "*":
-            return mul(x, y)
-        elif operator == "div" or "/":
-            return div(x, y)
+
+    def logic(self, x, y, operator):
+        if operator in ["add", "+"]:
+            return self.add(x, y)
+        elif operator in ["sub", "-"]:
+            return self.sub(x, y)
+        elif operator in ["mul", "*"]:
+            return self.mul(x, y)
+        elif operator in ["div", "/"]:
+            return self.div(x, y)
         else:
             return "Invalid operator"
 
     
+# 🧪 Execution
 x = float(input("Enter your first digit: "))
 y = float(input("Enter your second digit: "))
 operator = input("Enter your operator (add or +, sub or -, mul or *, div or /): ")
-result = calc()
-print(result)
+
+calc = Calc()
+result = calc.logic(x, y, operator)
+print("Result:", result)
